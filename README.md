@@ -70,4 +70,12 @@ Angular de cero a experto: (Angular 11+)
 
 
 
+---
+
+## Recursos
+
+[Instalaciones necesarias y recomendadas - Curso de Angular de cero a experto · GitHub](https://gist.github.com/Klerith/607dd6bb60b5a70bc5e4d9c81ef6501e)
+
+
+
 
