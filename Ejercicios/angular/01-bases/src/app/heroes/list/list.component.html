@@ -1,0 +1,14 @@
+<p>list works!</p>
+
+<div>
+  <span>{{this.deletedHero}}</span>
+</div>
+<button (click)="removeHero()">Eliminar héroe</button>
+
+<ul>
+  <li *ngFor="let hero of heroes; let i = index">
+    {{i+1}} {{hero}}
+  </li>
+</ul>
+
+
