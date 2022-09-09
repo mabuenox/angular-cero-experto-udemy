@@ -1,14 +1,15 @@
 <p>list works!</p>
 
-<div>
-  <span>{{this.deletedHero}}</span>
+<div *ngIf=" deletedHero !== '' ; else emptyDeletedTemplate">
+  Héroe borrado: <span>{{ this.deletedHero }}</span>
 </div>
+
+<ng-template #emptyDeletedTemplate>
+  <div>No ha borrado nada</div>
+</ng-template>
+
 <button (click)="removeHero()">Eliminar héroe</button>
 
 <ul>
-  <li *ngFor="let hero of heroes; let i = index">
-    {{i+1}} {{hero}}
-  </li>
+  <li *ngFor="let hero of heroes; let i = index">{{ i + 1 }} {{ hero }}</li>
 </ul>
-
-
