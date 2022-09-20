@@ -16,12 +16,12 @@
   </div>
 
   <div class="col">
-    <h2>Añadir</h2>
+    <h2>Añadir {{character.name}}</h2>
     <hr />
 
     <form (ngSubmit)="createCharacter()">
-      <input type="text" placeholder="Nombre" />
-      <input type="number" placeholder="Poder" />
+      <input type="text" placeholder="Nombre" name="name" [(ngModel)]="character.name" />
+      <input type="number" placeholder="Poder" name="power" [(ngModel)]="character.power" />
       <button type="submit">Enviar</button>
     </form>
 
