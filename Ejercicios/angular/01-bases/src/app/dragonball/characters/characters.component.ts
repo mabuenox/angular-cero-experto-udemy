@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html'
 })
 export class CharactersComponent {
-  characters: any[] = [];
+
+  @Input() characters: any[] = [];
+
 }
