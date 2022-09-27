@@ -1,0 +1,17 @@
+<h2>Añadir {{ newCharacter.name }}</h2>
+<hr />
+<form (ngSubmit)="createCharacter()">
+  <input
+    type="text"
+    placeholder="Nombre"
+    name="name"
+    [(ngModel)]="newCharacter.name"
+  />
+  <input
+    type="number"
+    placeholder="Poder"
+    name="power"
+    [(ngModel)]="newCharacter.power"
+  />
+  <button type="submit">Enviar</button>
+</form>

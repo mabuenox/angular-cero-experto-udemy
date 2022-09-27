@@ -1,0 +1,25 @@
+import { Component, Input } from '@angular/core';
+import { Character } from '../interfaces/Character';
+
+@Component({
+  selector: 'app-add-character',
+  templateUrl: './add-character.component.html',
+})
+export class AddCharacterComponent {
+  @Input() characters: Character[] = [];
+  @Input() newCharacter: Character = {
+    name: '',
+    power: 0,
+  };
+
+  createCharacter() {
+    if (this.newCharacter.name.trim().length === 0) return;
+
+    this.characters.push({ ...this.newCharacter });
+
+    console.log(this.characters[this.characters.length - 1]);
+
+    this.newCharacter.name = '';
+    this.newCharacter.power = 0;
+  }
+}

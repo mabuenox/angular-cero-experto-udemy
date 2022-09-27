@@ -21,15 +21,4 @@ export class MainPageComponent {
     name: '',
     power: 0,
   };
-
-  createCharacter() {
-    if (this.newCharacter.name.trim().length === 0) return;
-
-    this.characters.push({ ...this.newCharacter });
-
-    console.log(this.characters[this.characters.length - 1]);
-
-    this.newCharacter.name = '';
-    this.newCharacter.power = 0;
-  }
 }
