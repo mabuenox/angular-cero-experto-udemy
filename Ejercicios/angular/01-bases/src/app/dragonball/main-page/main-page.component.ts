@@ -21,4 +21,9 @@ export class MainPageComponent {
     name: '',
     power: 0,
   };
+
+  addCharacter(character: Character) {
+    this.characters.push(character);
+    console.log(this.characters[this.characters.length - 1]);
+  }
 }
