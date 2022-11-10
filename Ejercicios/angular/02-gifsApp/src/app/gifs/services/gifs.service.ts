@@ -11,7 +11,13 @@ export class GifsService {
   }
 
   search(query: string) {
+    if (query.length === 0) {
+      return;
+    }
+    if (this._history.some((item) => item.toLowerCase() == query.toLowerCase())) {
+      return;
+    }
     this._history.unshift(query);
-    console.log(this._history);
+    this._history = this._history.splice(0, 10);
   }
 }
