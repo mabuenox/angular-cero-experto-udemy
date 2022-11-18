@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Gif } from '../interfaces/gifs.interfaces';
+import { GifsService } from '../services/gifs.service';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get searchResults(): Gif[]{
+    return this.gifsService.searchResults;
   }
 
+  constructor(private gifsService: GifsService) {}
 }
