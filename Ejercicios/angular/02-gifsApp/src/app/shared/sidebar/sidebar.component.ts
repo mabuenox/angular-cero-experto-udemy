@@ -13,4 +13,10 @@ export class SidebarComponent {
   get history(): string[] {
     return this.gifsService.history;
   }
+
+  reloadSearch(item: string){
+    console.log(item);
+    this.gifsService.search(item);
+  }
+
 }
