@@ -15,7 +15,12 @@ export class GifsService {
 
   public searchResults: any[] = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+
+    this._history = JSON.parse(localStorage.getItem("history")!) || [];
+    this.searchResults = JSON.parse(localStorage.getItem("searchResults")!) || [];
+
+  }
 
   search(query: string) {
     if (query.length === 0) {
@@ -26,11 +31,13 @@ export class GifsService {
     }
     this._history.unshift(query);
     this._history = this._history.splice(0, 10);
+    localStorage.setItem("history", JSON.stringify(this._history));
 
     this.httpClient.get<SearchGIFResponse>(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${query}&limit=10`)
       .subscribe( (response) => {
-        this.searchResults = response.data;
         console.log(response.data);
+        this.searchResults = response.data;
+        localStorage.setItem("searchResults", JSON.stringify(this.searchResults));
       } );
 
   }
