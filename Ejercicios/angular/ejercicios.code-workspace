@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "01-bases",
+			"path": "01-bases"
+		},
+		{
+			"name": "02-gifsApp",
+			"path": "02-gifsApp"
+		},
+		{
+			"path": "03-paisesApp"
+		}
+	]
+}
